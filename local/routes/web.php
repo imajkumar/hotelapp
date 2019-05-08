@@ -33,7 +33,7 @@ Route::post('/getSampleDetails','SampleController@getSampleDetails')->name('getS
 Route::post('/getOffersList','OfferController@getOffersList')->name('getOffersList'); //v2
 
 
-
+Route::post('/UserResetPassword','UserController@UserResetPassword')->name('UserResetPassword');
 
 Route::post('/softdeleteClient','HotelController@softdeleteClient')->name('softdeleteClient');
 Route::post('/getClientDetails','ClientController@getClientDetails')->name('getClientDetails');

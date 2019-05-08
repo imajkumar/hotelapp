@@ -50,7 +50,7 @@
           <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
             <li class="m-menu__item  m-menu__item--submenu m-menu__item--rel" m-menu-submenu-toggle="click" m-menu-link-redirect="1" aria-haspopup="true"><a href="javascript:;" class="m-menu__link m-menu__toggle" title="Non functional dummy link"><i
                  class="m-menu__link-icon flaticon-user"></i><span class="m-menu__link-text">
-                   {{$panel_text}}
+                 {{$panel_text}} | Welcome ! <strong>{{ Auth::user()->name}}</strong>
                  </span></a>
 
             </li>

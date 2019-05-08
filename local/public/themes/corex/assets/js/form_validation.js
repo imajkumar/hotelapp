@@ -38,56 +38,56 @@ var FormControlsAyra = {
 
 
   $("#m_form_2_reset").validate({
-              rules: {
-                  email: {
-                      required: !0,
-                      email: !0
-                  },
-                  url: {
-                      required: !0
-                  },
-                  digits: {
-                      required: !0,
-                      digits: !0
-                  },
-                  creditcard: {
-                      required: !0,
-                      creditcard: !0
-                  },
-                  phone: {
-                      required: !0,
-                      phoneUS: !0
-                  },
-                  option: {
-                      required: !0
-                  },
-                  options: {
-                      required: !0,
-                      minlength: 2,
-                      maxlength: 4
-                  },
-                  memo: {
-                      required: !0,
-                      minlength: 10,
-                      maxlength: 100
-                  },
-                  checkbox: {
-                      required: !0
-                  },
-                  checkboxes: {
-                      required: !0,
-                      minlength: 1,
-                      maxlength: 2
-                  },
-                  radio: {
-                      required: !0
-                  }
-              },
-              invalidHandler: function(e, r) {
-                  mUtil.scrollTo("m_form_2", -200)
-              },
-              submitHandler: function(e) {}
-          }),
+    rules: {
+        email: {
+            required: !0,
+            email: !0
+        },
+        url: {
+            required: !0
+        },
+        digits: {
+            required: !0,
+            digits: !0
+        },
+        creditcard: {
+            required: !0,
+            creditcard: !0
+        },
+        phone: {
+            required: !0,
+            phoneUS: !0
+        },
+        option: {
+            required: !0
+        },
+        options: {
+            required: !0,
+            minlength: 2,
+            maxlength: 4
+        },
+        memo: {
+            required: !0,
+            minlength: 10,
+            maxlength: 100
+        },
+        checkbox: {
+            required: !0
+        },
+        checkboxes: {
+            required: !0,
+            minlength: 1,
+            maxlength: 2
+        },
+        radio: {
+            required: !0
+        }
+    },
+    invalidHandler: function(e, r) {
+        mUtil.scrollTo("m_form_2", -200)
+    },
+    submitHandler: function(e) {}
+}),
           $("#frm_edit_raw_data").validate({
   rules: {
 

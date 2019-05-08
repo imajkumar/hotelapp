@@ -113,3 +113,59 @@ $('#btnSaveSampleSent').click(function(){
 
           setTimeout(function(){newWin.close();},10);
       });
+
+
+      //btnPasswordReset
+$('#btnPasswordReset').click(function(){
+  var curr_pass=$('#current').val();
+  var new_pass=$('#password').val();
+  var confirm_pass=$('#confirmed').val();
+  if(curr_pass==""){
+    alert('Enter Current password');
+  }
+  if(new_pass==""){
+    alert('Enter New password');
+  }
+  if(confirm_pass==""){
+    alert('Enter Confirm  password');
+  }
+  if(confirm_pass!=new_pass){
+    alert('Password missed matched');
+  }
+  var formData = {
+    'current':curr_pass,   
+    'password':new_pass,   
+    'confirmed':confirm_pass,   
+    '_token':$('meta[name="csrf-token"]').attr('content'),
+    'user_id':$('meta[name="UUID"]').attr('content'),
+
+  };
+  $.ajax({
+    url: BASE_URL+'/UserResetPassword',
+    type: 'POST',
+    data: formData,
+    success: function(res) {
+     if(res.status==1){
+     alert('Password successfully changed');
+     
+     }   
+     if(res.status==2){
+      alert('Your current password does not matches with the password you provided');
+
+     
+     }    
+     if(res.status==3){
+      alert('New Password cannot be same as your current password. Please choose a different password..');
+
+     
+     }   
+  
+    } 
+    
+  });
+
+  
+
+
+});
+//btnPasswordReset

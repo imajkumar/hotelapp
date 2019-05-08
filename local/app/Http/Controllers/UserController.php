@@ -7,6 +7,7 @@ use App\User;
 use App\Company;
 use App\RowClient;
 use App\ContactClient;
+use Illuminate\Support\Facades\Hash;
 use DB;
 use Auth;
 use Spatie\Permission\Models\Role;
@@ -19,6 +20,48 @@ class UserController extends Controller
     {
        //  $this->middleware(['auth', 'isAdmin'])->except(['samples']);
     }
+
+
+    public function UserResetPassword(Request $request){
+
+      if (!(Hash::check($request->get('current'), Auth::user()->password))) {
+        // The passwords matches
+        $res_arr = array(
+          'status' => 2,
+          'Message' => 'Your current password does not matches with the password you provided. Please try again..',
+        );
+        return response()->json($res_arr);
+
+      
+    }
+    if(strcmp($request->get('current'), $request->get('password')) == 0){
+        //Current password and new password are same
+        $res_arr = array(
+          'status' => 3,
+          'Message' => 'New Password cannot be same as your current password. Please choose a different password..',
+        );
+        return response()->json($res_arr);
+
+        
+    }
+
+      $id=$request->user_id;
+      $user = User::findOrFail($id);
+      $this->validate($request, [          
+          'password'=>'required'
+      ]);
+
+      $input = $request->only(['password']);     
+      $user->fill($input)->save();      
+      $res_arr = array(
+        'status' => 1,
+        'Message' => 'Password saved successfully.',
+      );
+      return response()->json($res_arr);
+
+
+    }
+
     /**
      * Display a listing of the resource.
      *
