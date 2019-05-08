@@ -8,7 +8,7 @@
         <div class="m-stack m-stack--ver m-stack--general">
           <div class="m-stack__item m-stack__item--middle m-brand__logo">
             <a href="/" class="m-brand__logo-wrapper">
-
+              <img src="https://s3.ap-south-1.amazonaws.com/cdnmaster/hotel/logo.png" width="35px">
             </a>
           </div>
           <div class="m-stack__item m-stack__item--middle m-brand__tools">
