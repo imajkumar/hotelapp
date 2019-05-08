@@ -81,7 +81,7 @@ var DatatablesSearchOptionsAdvancedSearchOrderList = function() {
             var a;
             a = $("#m_table_13").DataTable({
                 responsive: !0,
-                dom: "<'row'<'col-sm-12'tr>>\n\t\t\t<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>",
+                // dom: "<'row'<'col-sm-12'tr>>\n\t\t\t<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>",
                 lengthMenu: [5, 10, 25, 50],
                 pageLength: 10,
                 language: {

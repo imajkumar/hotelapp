@@ -1,7 +1,54 @@
 
+<?php 
+$hotels_arr=AyraHelp::getHotes();
 
+
+?>
           <!-- main  -->
           <div class="m-content">
+			  <!--begin: Search Form -->
+			  <form class="m-form m-form--fit m--margin-bottom-20">
+					<div class="row m--margin-bottom-20">
+						<div class="col-lg-3 m--margin-bottom-10-tablet-and-mobile">
+							<label>Hotel :</label>
+							<select class="form-control m-input" data-col-index="1">
+									<option value="">Select</option>
+									<?php 
+									foreach ($hotels_arr as $key => $value) {
+										
+										?>
+									<option value="{{$value->name}}">{{$value->name}}</option>
+										<?php
+									}
+									?>
+								</select>
+
+						</div>
+						
+						
+						
+					</div>
+					
+					<div class="m-separator m-separator--md m-separator--dashed"></div>
+					<div class="row">
+						<div class="col-lg-12">
+							<button class="btn btn-brand m-btn m-btn--icon" id="m_search">
+								<span>
+									<i class="la la-search"></i>
+									<span>Search</span>
+								</span>
+							</button>
+							&nbsp;&nbsp;
+							<button class="btn btn-secondary m-btn m-btn--icon" id="m_reset">
+								<span>
+									<i class="la la-close"></i>
+									<span>Reset</span>
+								</span>
+							</button>
+						</div>
+					</div>
+				</form>
+
 
 						<!-- datalist -->
 						<div class="m-portlet m-portlet--mobile">

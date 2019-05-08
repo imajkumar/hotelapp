@@ -46,6 +46,11 @@
                 <span class="m-menu__link-text">Hotel List</span>
               </a>
             </li>
+            <li class="m-menu__item " aria-haspopup="true"><a href="{{route('room.index')}}" class="m-menu__link "><i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+              <span class="m-menu__link-text">Room List</span>
+            </a>
+          </li>
+          </li>
 
 
 
@@ -65,7 +70,7 @@
               }
               ?>
               <?php
-              if($user_role=='Admin' || $user_role=='Client'){
+              if($user_role=='Admin5' || $user_role=='Client5'){
                 ?>
                 <li class="{{$menu_class}}" aria-haspopup="true"  m-menu-submenu-toggle="hover">
                           <a  href="javascript:;" class="m-menu__link m-menu__toggle">
